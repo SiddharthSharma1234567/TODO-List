@@ -1,0 +1,208 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="bg-image"></div>
+    <div id="sidebar">
+      <div id="sidebar_header">
+        <div>
+          <img src="icon.jpg" id="sidebar_icon" />
+        </div>
+        <div id="sidebar_title">
+          <div id="sidebar_title_text">LET'S DO</div>
+          <div id="sidebar_title_text_underline"></div>
+        </div>
+      </div>
+      <div id="category_heading"></div>
+      <div id="category_input_area">
+        
+          <input
+            type="text"
+            id="categories"
+            name="categories"
+            placeholder="Add your task categories"
+          />
+        
+        <i
+          class="fa-solid fa-plus"
+          style="color: #000000"
+          id="categories_icon"
+        ></i>
+      </div>
+      <div id="categories_area">
+        <% if(category_array.length!==0){%> <%
+        category_array.map((items,index)=>{ %> <% if(index%2!==0){%>
+        <div id="categories_area_tasks" style="background-color: none">
+          <div id="categories_area_tasks_icon">
+            <i class="fa-solid fa-list-check" style="color: #000000"></i>
+          </div>
+          <div id="categories_area_tasks_name">
+            <a href="/<%=items%>" style="text-decoration: none; color: black"
+              ><%= items %></a
+            >
+          </div>
+        </div>
+        <%}else{%>
+        <div
+          id="categories_area_tasks"
+          style="background-color: rgb(215, 215, 215)"
+        >
+          <div id="categories_area_tasks_icon">
+            <i class="fa-solid fa-list-check" style="color: #000000"></i>
+          </div>
+          <div id="categories_area_tasks_name">
+            <a href="/<%=items%>" style="text-decoration: none; color: black"
+              ><%= items %></a
+            >
+          </div>
+        </div>
+        <%}%> <% }) %> <%}else{ %>
+        <div id="no_data">No Data</div>
+        <%}%>
+      </div>
+    </div>
+    <div id="main_content_area">
+      <div id="add_task_area">
+        <i class="fa-solid fa-plus" style="color: white" id="add_task_icon"></i>
+        <form id="add_task">
+          <input
+            type="text"
+            id="input_task"
+            name="input_task"
+            placeholder="Add your Tasks"
+          />
+          <input id="hidden_input" value="<%=category%>" name="hidden" />
+        </form>
+        <div id="logout_area">
+          <i
+            class="fa-solid fa-user-tie"
+            style="color: #ffffff"
+            id="logout"
+          ></i>
+        </div>
+      </div>
+      <div id="show_task_area">
+        <% if(filtered_data.length!==0){%> <% filtered_data.map((element)=>{%>
+        <div id="show_task">
+          <% if(element.isCompleted) {%>
+          <div id="checkbox_area">
+            <div
+              class="checkbox"
+              data="<%= element.task%>"
+              data-category="<%= element.category%>"
+              style="
+                height: 20px;
+                width: 20px;
+                background-color: rgb(60, 237, 6);
+                border-radius: 100%;
+                border: 2px solid rgb(65, 64, 64);
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <i class="fa-solid fa-check" style="color: #ffffff"></i>
+            </div>
+          </div>
+          <div
+            id="show_task_text"
+            style="color: rgb(65, 64, 64); text-decoration: line-through"
+          >
+            <%= element.task%>
+          </div>
+          <div
+            style="
+              width: 50px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div
+              id="delete_task"
+              style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <i
+                class="fa-solid fa-trash"
+                id="delete_icon"
+                data="<%= element.task%>"
+                data-category="<%= element.category%>"
+              ></i>
+            </div>
+          </div>
+          <% }else{%>
+          <div id="checkbox_area">
+            <div
+              class="checkbox"
+              data="<%= element.task%>"
+              data-category="<%= element.category%>"
+              style="
+                height: 20px;
+                width: 20px;
+                background-color: white;
+                border-radius: 100%;
+                border: 2px solid rgb(65, 64, 64);
+                cursor: pointer;
+              "
+            ></div>
+          </div>
+          <div id="show_task_text" style="color: rgb(65, 64, 64)">
+            <%= element.task%>
+          </div>
+          <div
+            style="
+              width: 50px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div
+              id="delete_task"
+              style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <i
+                class="fa-solid fa-trash"
+                id="delete_icon"
+                data="<%= element.task%>"
+                data-category="<%= element.category%>"
+              ></i>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <% }) %> <%}else{%>
+        <div
+          style="
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <div style="font-size: 25px"><u>No Data</u></div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+    <script src="home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
+    <div id="bg-image"></div>
+    <div id="login_area">
+      <div id="login_heading" style="font-size: 25px">
+        <div>LOGIN</div>
+      </div>
+      <div id="input_field">
+        <form style="width:100%" action="/signupdata" method="POST">
+            <div id="input_area_0">
+                <input type="text" id="username" name="username">
+                <label for="username" id="label0">Enter Your username</label>
+            </div>
+            <div id="input_area_1">
+                <input type="email" id="email" name="email">
+                <label for="email" id="label1">Enter Your Email</label>
+            </div>
+            <div id="input_area_2">
+                <input type="password" id="password" name="password" >
+                <label for="password" id="label2">Enter Password</label>
+            </div>
+            <div id="input_area_3">
+                <input type="checkbox" id="showpassword" name="showpassword" style="cursor:pointer">
+                <label for="showpassword" id="label3">Show Your Password</label>
+            </div>
+            <input type="submit" value="Create Account" id="submit" />
+        </form>
+      </div>
+    </div>
+    <script src="signup.js"></script>
+  </body>
+</html>

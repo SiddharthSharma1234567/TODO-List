@@ -1,0 +1,259 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#bg-image {
+  background-image: url("background.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  position: absolute;
+  z-index: 0;
+}
+
+#sidebar {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 250px;
+  background-color: rgb(231, 231, 231);
+}
+
+#sidebar_header {
+  height: 100px;
+  width: 100%;
+  display: flex;
+}
+
+#sidebar_icon {
+  height: 100%;
+  width: 100px;
+  z-index: 1;
+}
+
+#sidebar_title {
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  background-color: rgb(231, 231, 231);
+  margin-left: -23px;
+  padding-left: 10px;
+}
+
+#sidebar_title_text {
+  font-size: 25px;
+}
+
+#sidebar_title_text_underline {
+  height: 4px;
+  width: 100%;
+  background-color: green;
+}
+
+#category_heading {
+  height: 40px;
+  width: 100%;
+  background-color: gray;
+}
+
+#category_input_area {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#categories {
+  height: 40px;
+  width: 90%;
+  border-radius: 5px;
+  background-color: rgb(212, 211, 211);
+  border: 1px solid black;
+  padding-left: 10px;
+  padding-right: 40px;
+}
+
+#categories_icon {
+  position: absolute;
+  right: 30;
+}
+
+#categories_area {
+  height: calc(100% - 220px);
+  width: 100%;
+  margin-top: 20px;
+  overflow-y: scroll;
+}
+
+#categories_area_tasks {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center center;
+}
+
+#categories_area_tasks_icon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+#categories_area_tasks_name {
+  height: 100%;
+  display: flex;
+  padding-left: 10px;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+#no_data {
+  font-size: 30px;
+  padding-top: 200px;
+  padding-left: 70px;
+  text-decoration: underline;
+}
+
+#main_content_area {
+  width: calc(100% - 260px);
+  height: 100%;
+  position: relative;
+  margin-left: 255px;
+}
+
+#add_task_area {
+  height: 100px;
+  width: 100%;
+  display: flex;
+}
+
+#add_task {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#input_task {
+  width: 95%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding-left: 60px;
+}
+
+#add_task_icon {
+  position: absolute;
+  font-size: 20px;
+  top: 40px;
+  left: 50px;
+}
+
+#logout_area {
+  height: 40px;
+  width: 40px;
+  border: 2px solid white;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#logout_area:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+}
+
+#logout {
+  font-size: 25px;
+}
+
+#hidden_input {
+  position: absolute;
+  visibility: hidden;
+}
+
+#hidden_input1 {
+  position: absolute;
+  visibility: hidden;
+}
+
+#hidden_input2 {
+  position: absolute;
+  visibility: hidden;
+}
+
+#show_task_area {
+  height: calc(100% - 150px);
+  overflow-y: scroll;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#show_task {
+  height: 50px;
+  width: 80%;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  border: 2px solid rgb(65, 64, 64);
+  margin-left: 60px;
+  margin-top: 5px;
+}
+
+#show_task_text{
+  width: 90%;
+  padding-right: 20px;
+}
+
+#checkbox_area {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 100%;
+  border: 2px solid rgb(65, 64, 64);
+  cursor: pointer;
+}
+
+#delete_icon{
+  color: #ff0000;
+  cursor: pointer;
+}
+
+#delete_icon:hover{
+  box-shadow: 0 0 30px red;
+}
+
+#myform2{
+  position: absolute;
+  visibility: hidden;
+}
